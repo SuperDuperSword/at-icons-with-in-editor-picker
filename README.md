@@ -30,6 +30,8 @@ class_name MyNode
 extends Node
 ```
 
+Since v1.1.0, the pack comes with a companion web page you can use to quickly preview any icon and copy its annotation to your clipboard. Simply pick the desired node color on the left, and click on the icon you need to integrate!
+
 You might need to close and open the scene again for the icon change to occur.
 
 ## Contributing
