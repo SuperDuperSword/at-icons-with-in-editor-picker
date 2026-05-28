@@ -18,7 +18,7 @@ Each icon is designed on a 16×16 grid, with color variants corresponding to eve
 
 ## Installing
 
-Download the [latest release](https://github.com/voxybuns/at-icons/releases/latest) of **@icons**, and extract it into the root of your Godot project's folder. If you wish to use the icons in your plugin or addon, you can also copy individual icons along with their respective `.import` files into your plugin's folder, along with the library's license.
+Download the [latest release](https://github.com/voxybuns/at-icons/releases/latest) of **@icons** (also available on [itch.io](https://voxybuns.itch.io/at-icons) and the [Godot Asset Store](https://store.godotengine.org/asset/voxy/at-icons/)!), and extract it into the root of your Godot project's folder. If you wish to use the icons in your plugin or addon, you can also copy individual icons along with their respective `.import` files into your plugin's folder, along with the library's license.
 
 ## Applying custom node icons
 
