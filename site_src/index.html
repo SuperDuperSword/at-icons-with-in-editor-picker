@@ -102,7 +102,7 @@
 
     main {
         grid-area: main;
-        padding-inline: 1rem;
+        padding-inline: 2rem;
         padding-block: 1rem;
     }
 
@@ -114,6 +114,7 @@
 
     article.icon-card {
         display: grid;
+        position: relative;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr;
         grid-template-areas:
@@ -121,7 +122,6 @@
         ;
         anchor-scope: all;
         anchor-name: --tooltip-anchor;
-        overflow: hidden;
         border-radius: 1rem;
         cursor: pointer;
 
@@ -148,15 +148,17 @@
         & p.tooltip {
             display: none;
             position: absolute;
-            position-anchor: --tooltip-anchor;
-            position-area: block-end center;
-            margin-block-start: -0.5rem;
+            text-align: center;
+            left: 50%;
+            bottom: -1rem;
+            transform: translateX(-50%);
             padding: 0.5rem;
             border-radius: 0.5rem;
             font-size: 0.8rem;
             background: var(--color-accent);
             color: var(--color-black);
             box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.2);
+            z-index: 999;
         }
     }
 
@@ -291,7 +293,7 @@
             listItems.forEach(function(item) {
                 item.style.display = 'revert';
 
-                if (!item.dataset.icon.includes(searchTerm)) {
+                if (!item.dataset.icon.includes(searchTerm.toLowerCase())) {
                     item.style.display = 'none';
                 }
             })
