@@ -120,9 +120,6 @@
         grid-template-areas:
         "icon-dark icon-light"
         ;
-        anchor-scope: all;
-        anchor-name: --tooltip-anchor;
-        border-radius: 1rem;
         cursor: pointer;
 
         & div {
@@ -134,12 +131,14 @@
         }
 
         & div.display-dark {
+            border-radius: 1rem 0 0 1rem;
             grid-area: icon-dark;
             background: var(--icon-background_dark);
             --icon-fill: var(--icon-fill_dark);
         }
 
         & div.display-light {
+            border-radius: 0 1rem 1rem 0;
             grid-area: icon-light;
             background: var(--icon-background_light);
             --icon-fill: var(--icon-fill_light);
@@ -291,7 +290,7 @@
             const listItems = document.querySelectorAll("div#icon-grid article");
 
             listItems.forEach(function(item) {
-                item.style.display = 'revert';
+                item.style.display = 'inherit';
 
                 if (!item.dataset.icon.includes(searchTerm.toLowerCase())) {
                     item.style.display = 'none';
