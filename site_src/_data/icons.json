@@ -1694,6 +1694,11 @@
     "documentationLinks": [],
     "id": "223:76"
   },
+  "arrow_uturn_up_left": {
+    "description": "",
+    "documentationLinks": [],
+    "id": "223:76"
+  },
   "arrow_uturn_left_down": {
     "description": "",
     "documentationLinks": [],
@@ -2368,6 +2373,11 @@
     "description": "course, par, goal, objective",
     "documentationLinks": [],
     "id": "223:430"
+  },
+  "glass_pane": {
+    "description": "mirror, window, reflection, reflective, shiny, glossy",
+    "documentationLinks": [],
+    "id": "223:434"
   },
   "glasses": {
     "description": "spectacles, disguise, accessory, eyesight",
