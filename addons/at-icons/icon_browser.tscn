@@ -850,10 +850,7 @@ func copy_icon_to_clipboard(filepath: String) -> void:
 			string = \"[GlobalClass, Icon(\\\"%s\\\")]\" % [filepath]
 	
 	DisplayServer.clipboard_set(string)
-
-
-## We need this to do the keyword search 
-@onready var json: Node = %JSON
+	EditorInterface.get_editor_toaster().push_toast(\"Icon declaration copied to clipboard!\")
 
 
 func search(text: String) -> void:
@@ -939,7 +936,7 @@ func _ready() -> void:
 	update_search_aliases()
 "
 
-[node name="Icon Browser" type="Control" unique_id=1278436117]
+[node name="At-Icons Picker" type="Control" unique_id=1278436117]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
