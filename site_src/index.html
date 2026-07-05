@@ -30,6 +30,10 @@
         --color-node3d_light: #CD3838;
         --color-control_dark: #8EEF97;
         --color-control_light: #2FA139;
+        --color-animation_dark: #C38EF1;
+        --color-animation_light: #A85DE9;
+        --color-mesh_dark: #FFCA5F;
+        --color-mesh_light: #FEA900;
 
         --icon-background_dark: #292929;
         --icon-background_light: #e5e5e5;
@@ -333,6 +337,10 @@
                     <label for="typeNode3D">Node3D</label>
                     <input type="radio" onclick="changeNodeType(this)" id="typeControl" name="nodeType" value="control">
                     <label for="typeControl">Control</label>
+                    <input type="radio" onclick="changeNodeType(this)" id="typeAnimation" name="nodeType" value="animation">
+                    <label for="typeAnimation">Animation</label>
+                    <input type="radio" onclick="changeNodeType(this)" id="typeMesh" name="nodeType" value="mesh">
+                    <label for="typeMesh">Mesh</label>
                 </div>
             </fieldset>
             <fieldset>
@@ -408,6 +416,12 @@
             } else if (radio.value == "control") {
                 pageMain.style.setProperty("--icon-fill_dark", "var(--color-control_dark)");
                 pageMain.style.setProperty("--icon-fill_light", "var(--color-control_light)");
+            } else if (radio.value == "animation") {
+                pageMain.style.setProperty("--icon-fill_dark", "var(--color-animation_dark)");
+                pageMain.style.setProperty("--icon-fill_light", "var(--color-animation_light)");
+            } else if (radio.value == "mesh") {
+                pageMain.style.setProperty("--icon-fill_dark", "var(--color-mesh_dark)");
+                pageMain.style.setProperty("--icon-fill_light", "var(--color-mesh_light)");
             }
         }
 
