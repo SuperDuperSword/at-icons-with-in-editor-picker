@@ -599,7 +599,7 @@ const COLORS: Dictionary[String, Dictionary] = {
 	\"Mesh\":{
 		\"dark\": Color(\"ffca5f\"),
 		\"light\": Color(\"fea900\"),
-	}
+	},
 }
 
 @export_storage var icons : Array[Texture2D]
