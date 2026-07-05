@@ -995,9 +995,9 @@
     "id": "223:143"
   },
   "glass": {
-    "description": "mirror, window, reflection, reflective, shiny, glossy",
+    "description": "drink, liquid, beverage, container",
     "documentationLinks": [],
-    "id": "223:507"
+    "id": "223:278"
   },
   "gimbal": {
     "description": "rotate, transform, axis, axes, trackball, gyroscope, motion",
@@ -1694,11 +1694,6 @@
     "documentationLinks": [],
     "id": "223:76"
   },
-  "arrow_uturn_up_left": {
-    "description": "",
-    "documentationLinks": [],
-    "id": "223:76"
-  },
   "arrow_uturn_left_down": {
     "description": "",
     "documentationLinks": [],
@@ -1710,6 +1705,11 @@
     "id": "223:213"
   },
   "arrow_uturn_down_left": {
+    "description": "undo",
+    "documentationLinks": [],
+    "id": "223:28"
+  },
+  "arrow_uturn_up_left": {
     "description": "undo",
     "documentationLinks": [],
     "id": "223:110"
@@ -2374,15 +2374,15 @@
     "documentationLinks": [],
     "id": "223:430"
   },
-  "glass_pane": {
-    "description": "mirror, window, reflection, reflective, shiny, glossy",
-    "documentationLinks": [],
-    "id": "223:434"
-  },
   "glasses": {
     "description": "spectacles, disguise, accessory, eyesight",
     "documentationLinks": [],
     "id": "223:434"
+  },
+  "glass_pane": {
+    "description": "mirror, window, reflection, reflective, shiny, glossy",
+    "documentationLinks": [],
+    "id": "223:507"
   },
   "gift": {
     "description": "present, box, reward, free",
@@ -2553,5 +2553,235 @@
     "description": "time",
     "documentationLinks": [],
     "id": "223:404"
+  },
+  "unwrap": {
+    "description": "uv, unfold, seams, box, texture, cube, modeling, texturing, mapping",
+    "documentationLinks": [],
+    "id": "320:488"
+  },
+  "underline": {
+    "description": "text, editing, formatting, insert, important",
+    "documentationLinks": [],
+    "id": "320:475"
+  },
+  "table": {
+    "description": "data, formatting, spreadsheet, rows, columns, text, editing, insert",
+    "documentationLinks": [],
+    "id": "320:485"
+  },
+  "superscript": {
+    "description": "text, editing, formatting, insert, exponent, small, superior, numerator, ordinal, footnote",
+    "documentationLinks": [],
+    "id": "320:480"
+  },
+  "subscript": {
+    "description": "text, editing, formatting, insert, denominator, formula, inferior, small",
+    "documentationLinks": [],
+    "id": "320:459"
+  },
+  "strikethrough": {
+    "description": "text, editing, formatting, remove, dash, delete, line",
+    "documentationLinks": [],
+    "id": "320:478"
+  },
+  "shocked_face": {
+    "description": "body, emotion, surprised, bewildered, gasp, smiley, emoji",
+    "documentationLinks": [],
+    "id": "320:474"
+  },
+  "quotation_marks": {
+    "description": "quote, quoteblock, cite, text, editing, formatting, insert",
+    "documentationLinks": [],
+    "id": "320:487"
+  },
+  "paragraph": {
+    "description": "section, text, editing, heading, body, style, formatting",
+    "documentationLinks": [],
+    "id": "320:473"
+  },
+  "neutral_face": {
+    "description": "body, emotion, unamused, meh, expressionless, smiley, emoji",
+    "documentationLinks": [],
+    "id": "326:27"
+  },
+  "list_unordered": {
+    "description": "text, editing, bullet, formatting, insert",
+    "documentationLinks": [],
+    "id": "320:470"
+  },
+  "list_ordered": {
+    "description": "text, editing, numbered, tier, formatting, insert",
+    "documentationLinks": [],
+    "id": "320:472"
+  },
+  "list_checkboxes": {
+    "description": "text, editing, tasklist, checklist, formatting, insert",
+    "documentationLinks": [],
+    "id": "320:469"
+  },
+  "italics": {
+    "description": "text, editing, formatting, insert, style, slant, emphasis",
+    "documentationLinks": [],
+    "id": "320:464"
+  },
+  "happy_face": {
+    "description": "body, emotion, grinning, laughing, ecstatic, beaming smiley, emoji",
+    "documentationLinks": [],
+    "id": "320:477"
+  },
+  "folder_zip": {
+    "description": "file, directory, compressed, 7z, rar",
+    "documentationLinks": [],
+    "id": "320:461"
+  },
+  "folder_lock": {
+    "description": "file, directory, locked, encrypted",
+    "documentationLinks": [],
+    "id": "320:467"
+  },
+  "floppy_disks": {
+    "description": "save, as, copy, backup, diskettes, floppies",
+    "documentationLinks": [],
+    "id": "320:463"
+  },
+  "file_video": {
+    "description": "document, sheet, paper, video, playback, film, movie",
+    "documentationLinks": [],
+    "id": "320:460"
+  },
+  "file_terminal": {
+    "description": "document, sheet, paper, new, command, line, script, batch, bash",
+    "documentationLinks": [],
+    "id": "320:468"
+  },
+  "file_sliders": {
+    "description": "document, sheet, paper, configuration, settings, options",
+    "documentationLinks": [],
+    "id": "320:483"
+  },
+  "file_plus": {
+    "description": "document, sheet, paper, new, add, duplicate, copy, create",
+    "documentationLinks": [],
+    "id": "320:457"
+  },
+  "file_pencil": {
+    "description": "document, sheet, paper, edit, modify, write",
+    "documentationLinks": [],
+    "id": "320:482"
+  },
+  "file_note_double": {
+    "description": "document, sheet, paper, music, sound, audio, song",
+    "documentationLinks": [],
+    "id": "320:456"
+  },
+  "file_note": {
+    "description": "document, sheet, paper, music, sound, audio, song",
+    "documentationLinks": [],
+    "id": "320:466"
+  },
+  "file_magnifying_glass": {
+    "description": "document, sheet, paper, search, find, locate",
+    "documentationLinks": [],
+    "id": "320:454"
+  },
+  "file_image": {
+    "description": "document, sheet, paper, picture, photo, texture,",
+    "documentationLinks": [],
+    "id": "320:452"
+  },
+  "file_document": {
+    "description": "document, sheet, paper, new, text, write, documentation, readme",
+    "documentationLinks": [],
+    "id": "320:465"
+  },
+  "file_cross": {
+    "description": "document, sheet, paper, delete, remove, no, invalid",
+    "documentationLinks": [],
+    "id": "320:453"
+  },
+  "file_cog": {
+    "description": "document, sheet, paper, configuration, settings",
+    "documentationLinks": [],
+    "id": "320:451"
+  },
+  "file_code": {
+    "description": "document, sheet, paper, script",
+    "documentationLinks": [],
+    "id": "320:471"
+  },
+  "file_checkmark": {
+    "description": "document, sheet, paper, validate, yes, ok, verify, verified",
+    "documentationLinks": [],
+    "id": "320:484"
+  },
+  "file_box": {
+    "description": "document, sheet, paper, new",
+    "documentationLinks": [],
+    "id": "320:450"
+  },
+  "file_arrow_up_right": {
+    "description": "document, sheet, paper, external",
+    "documentationLinks": [],
+    "id": "320:449"
+  },
+  "file_arrow_up_left": {
+    "description": "document, sheet, paper, internal, import",
+    "documentationLinks": [],
+    "id": "320:448"
+  },
+  "file_arrow_up": {
+    "description": "document, sheet, paper, import, upload, open",
+    "documentationLinks": [],
+    "id": "320:479"
+  },
+  "file_arrow_right": {
+    "description": "document, sheet, paper, new, output, export",
+    "documentationLinks": [],
+    "id": "320:446"
+  },
+  "file_arrow_left": {
+    "description": "document, sheet, paper, input, insert, import",
+    "documentationLinks": [],
+    "id": "320:486"
+  },
+  "file_arrow_down_right": {
+    "description": "document, sheet, paper",
+    "documentationLinks": [],
+    "id": "320:445"
+  },
+  "file_arrow_down_left": {
+    "description": "document, sheet, paper, internal",
+    "documentationLinks": [],
+    "id": "320:458"
+  },
+  "file_arrow_down": {
+    "description": "document, sheet, paper, export, download, save",
+    "documentationLinks": [],
+    "id": "320:476"
+  },
+  "code": {
+    "description": "codeblock, preformatted, script, monospace, text, editing, style, formatting, insert",
+    "documentationLinks": [],
+    "id": "320:462"
+  },
+  "cloud_arrow_up": {
+    "description": "external, upload, import, storage",
+    "documentationLinks": [],
+    "id": "320:444"
+  },
+  "cloud_arrow_down": {
+    "description": "external, download, export, storage, local, copy",
+    "documentationLinks": [],
+    "id": "320:447"
+  },
+  "bold": {
+    "description": "text, editing, formatting, insert, strong, weight, important",
+    "documentationLinks": [],
+    "id": "320:481"
+  },
+  "angry_face": {
+    "description": "body, emotion, furious, upset, mad, smiley, emoji",
+    "documentationLinks": [],
+    "id": "320:455"
   }
 }

@@ -1,11 +1,11 @@
 # @icons
 
 <p align="center">
-    <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/logo_dark_theme.svg">
-    <source media="(prefers-color-scheme: light)" srcset="docs/logo_light_theme.svg">
-    <img alt="@icons" src="docs/logo_dark_theme.svg" width="560px">
-    </picture>
+	<picture>
+	<source media="(prefers-color-scheme: dark)" srcset="docs/logo_dark_theme.svg">
+	<source media="(prefers-color-scheme: light)" srcset="docs/logo_light_theme.svg">
+	<img alt="@icons" src="docs/logo_dark_theme.svg" width="560px">
+	</picture>
 </p>
 
 **@icons** is a free and open-source library of 500+ vector (SVG) icons you can use as custom node icons in your Godot projects or plugins, designed to fit with the existing set of editor icons, and optimized using [svgo](https://svgo.dev/).
