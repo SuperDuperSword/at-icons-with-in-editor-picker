@@ -617,6 +617,8 @@ var _button_theme: Theme = Theme.new()
 var icon_material_light: ShaderMaterial = ShaderMaterial.new()
 var icon_material_dark: ShaderMaterial = ShaderMaterial.new()
 
+var icon_scale: float = 1.0
+
 var selected_type: String:
 	get:
 		return icon_type_button.get_item_text(
@@ -631,6 +633,7 @@ var selected_lang: String:
 
 @onready var icon_type_button: OptionButton = %TypePickerButton
 @onready var declaration_type_button: OptionButton = %DeclarationPickerButton
+@onready var scale_toggle: CheckBox = %ScaleToggle
 @onready var json_holder: Node = %JSON
 
 # Called when the node enters the scene tree for the first time.
@@ -640,6 +643,9 @@ func _ready() -> void:
 		icon_type_button.item_selected.disconnect(update_preview_colors)
 	icon_type_button.item_selected.connect(update_preview_colors.unbind(1))
 	
+	if scale_toggle and scale_toggle.toggled.is_connected(update_icon_list):
+		scale_toggle.toggled.disconnect(update_icon_scale)
+	scale_toggle.toggled.connect(update_icon_scale.unbind(1))
 	
 	# Prevent an error from occuring should the picker scene be ran externally
 	if Engine.is_editor_hint():
@@ -665,6 +671,15 @@ func _notification(what: int) -> void:
 			if is_node_ready(): # Otherwise it's called in _ready
 				get_editor_theme()
 
+
+func update_icon_scale() -> void:
+	match scale_toggle.button_pressed:
+		false:
+			icon_scale = 1.0
+		true:
+			icon_scale = 2.0
+			
+	_initialize_nodes()
 
 func update_preview_colors() -> void:
 	icon_material_light.set_shader_parameter(
@@ -705,7 +720,7 @@ func _initialize_nodes() -> void:
 		button.custom_minimum_size = Vector2(
 			ICON_PREVIEW_WIDTH,
 			ICON_PREVIEW_HEIGHT
-		) * editor_scale
+		) * editor_scale * icon_scale
 		button.size = button.custom_minimum_size
 		button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 		button.tooltip_text = texture.resource_path.get_file() + \"\\nClick to copy this icon's declaration to your clipboard.\"
@@ -719,13 +734,13 @@ func _initialize_nodes() -> void:
 
 		button.add_child(trect_d)
 		trect_d.anchor_bottom = 0.5
-		trect_d.offset_bottom = ICON_SIZE.y / 2 * editor_scale
+		trect_d.offset_bottom = ICON_SIZE.y / 2 * editor_scale * icon_scale
 		trect_d.anchor_top = 0.5
-		trect_d.offset_top = ICON_SIZE.y / -2 * editor_scale
+		trect_d.offset_top = ICON_SIZE.y / -2 * editor_scale * icon_scale
 		trect_d.anchor_right = 0.5
-		trect_d.offset_right = ICON_SIZE.x / 2 * editor_scale
+		trect_d.offset_right = ICON_SIZE.x / 2 * editor_scale * icon_scale
 		trect_d.anchor_left = 0.5
-		trect_d.offset_left = ICON_SIZE.x / -2 * editor_scale
+		trect_d.offset_left = ICON_SIZE.x / -2 * editor_scale * icon_scale
 		
 		#endregion
 		
@@ -939,6 +954,20 @@ popup/item_0/text = "GDScript"
 popup/item_0/id = 0
 popup/item_1/text = "C#"
 popup/item_1/id = 1
+
+[node name="Scale" type="HBoxContainer" parent="MainContainer/Options" unique_id=1810444556]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainContainer/Options/Scale" unique_id=370202035]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "2× Scale"
+
+[node name="ScaleToggle" type="CheckBox" parent="MainContainer/Options/Scale" unique_id=994074905]
+unique_name_in_owner = true
+layout_mode = 2
+button_pressed = true
+text = "On"
 
 [node name="SearchBar" type="LineEdit" parent="MainContainer" unique_id=568912931]
 layout_mode = 2
