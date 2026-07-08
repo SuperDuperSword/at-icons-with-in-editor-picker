@@ -671,6 +671,7 @@ func _notification(what: int) -> void:
 			if is_node_ready(): # Otherwise it's called in _ready
 				get_editor_theme()
 
+@onready var search_bar: LineEdit = %SearchBar
 
 func update_icon_scale() -> void:
 	match scale_toggle.button_pressed:
@@ -680,6 +681,8 @@ func update_icon_scale() -> void:
 			icon_scale = 2.0
 			
 	_initialize_nodes()
+	
+	search(search_bar.text)
 
 func update_preview_colors() -> void:
 	icon_material_light.set_shader_parameter(
@@ -759,6 +762,7 @@ func _initialize_nodes() -> void:
 ## Might decrease lag.
 func _remove_all_children() -> void:
 	for child in get_children():
+		remove_child(child)
 		child.queue_free()
 
 
@@ -969,6 +973,7 @@ layout_mode = 2
 text = "On"
 
 [node name="SearchBar" type="LineEdit" parent="MainContainer" unique_id=568912931]
+unique_name_in_owner = true
 layout_mode = 2
 placeholder_text = "Search icons..."
 emoji_menu_enabled = false
