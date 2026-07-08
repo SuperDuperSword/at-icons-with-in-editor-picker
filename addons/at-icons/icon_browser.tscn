@@ -633,7 +633,7 @@ var selected_lang: String:
 
 @onready var icon_type_button: OptionButton = %TypePickerButton
 @onready var declaration_type_button: OptionButton = %DeclarationPickerButton
-@onready var scale_toggle: CheckBox = %ScaleToggle
+@onready var scale_toggle: CheckButton = %ScaleToggle
 @onready var json_holder: Node = %JSON
 
 # Called when the node enters the scene tree for the first time.
@@ -977,7 +977,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "2× Scale"
 
-[node name="ScaleToggle" type="CheckBox" parent="MainContainer/Options/Scale" unique_id=994074905]
+[node name="ScaleToggle" type="CheckButton" parent="MainContainer/Options/Scale" unique_id=1498505067]
 unique_name_in_owner = true
 layout_mode = 2
 text = "On"
