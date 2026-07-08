@@ -657,7 +657,11 @@ func _ready() -> void:
 	icon_material_dark.shader = icon_shader
 	
 	var ticks := Time.get_ticks_usec()
-	_initialize_nodes()
+	_remove_all_children()
+	for _scale in [1.0, 2.0]:
+		icon_scale = _scale
+		_initialize_nodes()
+	update_icon_scale()
 	var took := Time.get_ticks_usec() - ticks
 	#prints(\"It took exactly\", took / 1_000_000.0, \"seconds to create all the buttons.\")
 	
@@ -680,7 +684,7 @@ func update_icon_scale() -> void:
 		true:
 			icon_scale = 2.0
 			
-	_initialize_nodes()
+	#_initialize_nodes()
 	
 	search(search_bar.text)
 
@@ -715,7 +719,7 @@ func get_editor_theme():
 
 
 func _initialize_nodes() -> void:
-	_remove_all_children()
+	#_remove_all_children()
 	
 	for texture in icons:
 		var button: Button = Button.new()
@@ -726,10 +730,12 @@ func _initialize_nodes() -> void:
 		) * editor_scale * icon_scale
 		button.size = button.custom_minimum_size
 		button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
-		button.tooltip_text = texture.resource_path.get_file() + \"\\nClick to copy this icon's declaration to your clipboard.\"
+		button.tooltip_text = texture.resource_path.get_file() + \\
+				\"\\nClick to copy this icon's declaration to your clipboard.\"
 		
 		var trect_d: TextureRect = TextureRect.new()
 		trect_d.texture = texture
+		trect_d.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 		trect_d.material = icon_material_dark
 		trect_d.custom_minimum_size = ICON_SIZE
 		trect_d.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
@@ -747,8 +753,9 @@ func _initialize_nodes() -> void:
 		
 		#endregion
 		
-		button.name = texture.resource_path.get_file().get_basename()
+		button.set_meta(\"icon\", texture.resource_path.get_file().get_basename())
 		self.add_child(button)
+		button.set_meta(\"icon_scale\", icon_scale)
 		
 		
 		button.pressed.connect(func():
@@ -812,7 +819,7 @@ func copy_icon_to_clipboard(filepath: String) -> void:
 func search(text: String) -> void:
 	if not text: # No query:
 		for child in get_children():
-			child.show()
+			child.visible = child.get_meta(\"icon_scale\") == icon_scale
 		return
 	
 	text = text.replace(\" \", \"_\")
@@ -821,11 +828,14 @@ func search(text: String) -> void:
 	# There is a query
 	for child in get_children():
 		child.visible = false
+		if child.get_meta(\"icon_scale\") != icon_scale:
+			continue # It's hidden already
+		
 		var icon_aliases: Array
-		if child.name not in search_aliases:
-			icon_aliases = [child.name]
+		if child.get_meta(\"icon\") not in search_aliases:
+			icon_aliases = [child.get_meta(\"icon\")]
 		else:
-			icon_aliases = search_aliases[child.name]
+			icon_aliases = search_aliases[child.get_meta(\"icon\")]
 		for alias: String in icon_aliases:
 			if text in alias:
 				child.show()
