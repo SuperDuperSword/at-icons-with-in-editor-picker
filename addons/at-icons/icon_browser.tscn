@@ -633,7 +633,7 @@ var selected_lang: String:
 
 @onready var icon_type_button: OptionButton = %TypePickerButton
 @onready var declaration_type_button: OptionButton = %DeclarationPickerButton
-@onready var scale_toggle: CheckButton = %ScaleToggle
+@onready var scale_toggle: Button = %ScaleToggle
 @onready var json_holder: Node = %JSON
 
 # Called when the node enters the scene tree for the first time.
